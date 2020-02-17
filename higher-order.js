@@ -20,8 +20,9 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let evenNumbers // = mixedNumbers.filter(/* Provide Your Callback Here */)
+let evenNumbers = mixedNumbers.filter(function(element, index, array){
+  return element % 2 === 0;
+});
 
 
 
@@ -43,8 +44,10 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
   (element, index, wholeArray)=>{}    Arrow Form
 */
 
-//Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+const taxRate = .07;
+let postTaxPrices = prices.map(function(element, index, array){
+  return element*(1 + taxRate);
+});
 
 
 
@@ -62,8 +65,10 @@ const populations = [8175133, 3792621, 2695598, 2100263];
   (runningTotal, curElement, curIndex, wholeArray)=>{} Arrow Form
 */
 
-//Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+let totalPopulation = populations.reduce(function(runningTotal,curElement,curIndex,wholeArray){
+  return runningTotal += curElement;
+});
+
 
 
 
@@ -81,15 +86,22 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 {"monster":"Ponylopse","CP":125},{"monster":"Bulbabunny","CP":178}];
 // Do not edit the code above.
 
-/*
-  Now we're going to ramp these up a little bit.
-  Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce with.
 
-  Use the filter method to return only the monsters that have a CP of over 200.
-*/
+  // Now we're going to ramp these up a little bit.
+  // Instead of just arrays of numbers, we are going to have array of objects that we want to use map, filter, and reduce with.
 
-//Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+  // Use the filter method to return only the monsters that have a CP of over 200.
+
+
+const myStrongest = monstersInYourPocket.map(function(element, index, array){     
+  array.filter(function(element, index, array){
+    if (element.CP > 200){
+      return element;
+      }
+    })}  
+  );
+console.log(myStrongest);
+// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
 
 
