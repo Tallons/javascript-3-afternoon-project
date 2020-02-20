@@ -107,7 +107,6 @@ return str;
 }
 
 
-
 /* 
   Sometimes it's needed to delete object properties. 
   All you need is the word delete before a reference to the object property value. 

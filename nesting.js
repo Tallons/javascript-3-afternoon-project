@@ -187,7 +187,6 @@ function recordCleaner(){
 
 
 
-
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.

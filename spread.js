@@ -55,4 +55,3 @@ let arr2 = ['bear', 'tiger', 'liger'];
 
 const combinedArrays = [...arr1, ...arr2];
 
-
