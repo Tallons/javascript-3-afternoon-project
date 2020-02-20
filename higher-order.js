@@ -93,15 +93,14 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
   // Use the filter method to return only the monsters that have a CP of over 200.
 
 
-const myStrongest = monstersInYourPocket.map(function(element, index, array){     
-  array.filter(function(element, index, array){
+const myStrongest = monstersInYourPocket.filter(function(element, index, array){
     if (element.CP > 200){
       return element;
       }
-    })}  
+    } 
   );
 console.log(myStrongest);
-// = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+
 
 
 
@@ -118,7 +117,13 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals // Code here
+
+let orderTotals = orders.map(function(element){
+  return element.price * (element.tax+1);
+});
+// let orderTotals = orders.map(function(element,index,array){
+//   Math.round(element.price * (element.tax + 1)*100)/100;
+// });
 
 
 
@@ -138,6 +143,15 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
   Use a high order method to create to get the sum of bobsTotal.
 */
 
-let bobsTotal //Code Here
+// let bobsTotal = purchases.reduce((acc, curr) => curr.owner === "Bob" ? curr.price + acc : acc, 0)
+
+
+let bobsTotal = purchases.reduce((acc, curr) => {
+  if(curr.owner === "Bob"){
+      acc += curr.price;
+  }
+  return acc
+}, 0)
+
 
 

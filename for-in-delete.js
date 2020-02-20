@@ -94,16 +94,17 @@ return obj;
   If the property name starts with an 'sh', concatenate the value to the string variable.
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
-// ------------------- COME BACK
-// function secrets(obj){
-//   const str = '';
-//   for(let key in obj){
-//    if(obj[key].startsWith('sh')) {
-//      str+= obj[key];
-//   }
-// }
-// return str;
-// }
+
+
+function secrets(obj){
+  let str = '';
+  for(let key in obj){
+   if(key.startsWith('sh')) {
+     str+= obj[key];
+  }
+}
+return str;
+}
 
 
 
@@ -173,14 +174,14 @@ for (let key in deleteTheBigNumbers){
   Return the updated object.
 */
 
-// function startsWithK(obj){
-//   for (let key in obj){
-//     if(obj[key].charAt(0) === 'k'){
-//       delete obj[key];
-//     }  
-//   }
-//   return obj;
-// }
+function startsWithK(obj){
+  for (let key in obj){
+    if(key.startsWith("k")){
+      delete obj[key];
+    }  
+  }
+  return obj;
+}
 
 
 
@@ -197,7 +198,7 @@ for (let key in deleteTheBigNumbers){
 
 function hiddenTreasure(obj){
   for(let key in obj){
-    if(obj[key].includes("treasure")){
+    if(!obj[key].includes("treasure")){
       delete obj[key];
     }
   }
